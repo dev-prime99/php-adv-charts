@@ -21,6 +21,31 @@
 
   <body>
 
+    <?php
+
+      $access = $_GET["level"];
+        if ($access == "guest") {
+          echo '<style type="text/css">
+            .fat {
+              display: block;
+            }
+            </style>';
+        } elseif ($access == 'employee') {
+          echo '<style type="text/css">
+            .fat, .agent {
+              display: block;
+            }
+            </style>';
+        } elseif ($access == 'clevel') {
+          echo '<style type="text/css">
+            .fat, .agent, .team {
+              display: block;
+            }
+            </style>';
+        }
+
+     ?>
+
     <div class="fat">
       <canvas id="fat" height="400" width="800"></canvas>
     </div>
